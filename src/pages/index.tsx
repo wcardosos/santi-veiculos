@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <Header />
 
-      <section className="relative w-screen min-h-[80vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[80vh] overflow-hidden pb-6">
+      <section className="relative min-h-[80vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[80vh] overflow-hidden pb-6">
         <video
           className="absolute w-full h-full object-cover"
           autoPlay
@@ -37,12 +37,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-12 lg:my-16 text-center px-6 mx-auto">
-        <h1 className="font-bold text-primary text-xl">Veículos em destaque</h1>
+      <section className="my-12 lg:my-16 text-center mx-auto">
+        <h1 className="font-bold text-primary text-xl lg:text-2xl">
+          Veículos em destaque
+        </h1>
 
-        <div className="w-64 h-[2px] bg-secondary my-6 mx-auto" />
+        <div className="w-64 lg:w-96 h-[2px] bg-secondary my-6 mx-auto" />
 
-        <div>
+        <div className="max-w-2xl mx-auto">
           <Tabs />
         </div>
       </section>
