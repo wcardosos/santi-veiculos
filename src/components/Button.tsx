@@ -16,10 +16,18 @@ interface ButtonProps {
 }
 
 export default function Button({ variant, color, children }: ButtonProps) {
-  const shadowStyles = ['shadow-sm', 'shadow-gray-900']
+  const shadowStyles = ['shadow-md']
   const dynamicStyles: DefaultStyles = {
-    primary: ['bg-primary/90', 'hover:bg-primary', ...shadowStyles],
-    secondary: ['bg-orange-400', 'hover:bg-orange-500', ...shadowStyles],
+    primary: [
+      'bg-primary/90',
+      'hover:bg-primary text-gray-50',
+      ...shadowStyles,
+    ],
+    secondary: [
+      'bg-orange-400',
+      'hover:bg-orange-500 text-gray-50',
+      ...shadowStyles,
+    ],
     ghost: ['border', 'border-gray-50', 'hover:bg-gray-50/20'],
   }
 
