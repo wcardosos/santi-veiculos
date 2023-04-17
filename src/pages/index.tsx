@@ -1,12 +1,10 @@
-import { List as Menu } from 'phosphor-react'
+import Button from '@/components/Button'
+import Header from '@/components/Header'
 
 export default function Home() {
   return (
     <main>
-      <header className="flex justify-between items-center py-4 text-primary px-6">
-        <p>Logo</p>
-        <Menu size={24} weight="bold" />
-      </header>
+      <Header />
 
       <section className="relative w-screen min-h-[80vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[80vh] overflow-hidden pb-6">
         <video
@@ -30,12 +28,10 @@ export default function Home() {
           </p>
 
           <div className="grid grid-rows-2 gap-4 mt-16">
-            <button className="bg-orange-400 hover:bg-orange-500 w-48 lg:w-64 h-10 lg:h-14 rounded font-bold mx-auto shadow-sm shadow-gray-900">
+            <Button variant="filled" color="secondary">
               Carros em destaque
-            </button>
-            <button className="border border-gray-50 hover:bg-gray-50/20 hover:text-secon w-48 lg:w-64 h-10 lg:h-14 rounded font-bold mx-auto">
-              Serviços
-            </button>
+            </Button>
+            <Button variant="ghost">Serviços</Button>
           </div>
         </div>
       </section>
