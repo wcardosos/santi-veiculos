@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import Header from '@/components/Header'
+import Tabs from '@/components/Tabs'
 
 export default function Home() {
   return (
@@ -33,6 +34,16 @@ export default function Home() {
             </Button>
             <Button variant="ghost">Serviços</Button>
           </div>
+        </div>
+      </section>
+
+      <section className="my-12 lg:my-16 text-center px-6 mx-auto">
+        <h1 className="font-bold text-primary text-xl">Veículos em destaque</h1>
+
+        <div className="w-64 h-[2px] bg-secondary my-6 mx-auto" />
+
+        <div>
+          <Tabs />
         </div>
       </section>
     </main>
