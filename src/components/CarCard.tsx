@@ -6,6 +6,7 @@ interface CarCardProps {
   motor: number
   brand: string
   model: string
+  variant: 'primary' | 'secondary'
 }
 
 export default function CarCard({
@@ -14,6 +15,7 @@ export default function CarCard({
   motor,
   brand,
   model,
+  variant,
 }: CarCardProps) {
   return (
     <div className="bg-gray-100 shadow-md">
@@ -25,7 +27,11 @@ export default function CarCard({
 
       <div className="pt-4 lg:pt-6 pb-6 lg:pb-8 px-4 lg:px-6 text-start">
         <div className="flex justify-between items-center w-full">
-          <strong className="font-bold text-primary text-lg">
+          <strong
+            className={`font-bold text-${
+              variant === 'primary' ? 'primary' : 'orange-500'
+            } text-lg`}
+          >
             R$ {value.toLocaleString('pt-br')}
           </strong>
           <p>{motor.toFixed(1)}</p>
@@ -34,7 +40,7 @@ export default function CarCard({
           <p>{`${brand} ${model}`}</p>
         </div>
         <div className="flex items-center">
-          <Button variant="filled" color="primary">
+          <Button variant="filled" color={variant}>
             Mais detalhes
           </Button>
         </div>

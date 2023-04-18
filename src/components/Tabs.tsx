@@ -14,8 +14,10 @@ type Tab = 'sale' | 'location'
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
 
-  const selectedStyles =
+  const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
+  const locationSelectedStyles =
+    'text-orange-500 font-bold w-1/2 py-2 border-b-2 border-orange-500'
   const defaultStyles =
     'text-gray-600 w-1/2 py-2 border-b-[1px] border-gray-600'
 
@@ -23,7 +25,9 @@ export default function Tabs() {
     <TabRoot className="flex flex-col w-full" defaultValue="sale">
       <TabList className="flex">
         <TabTrigger
-          className={selectedTab === 'sale' ? selectedStyles : defaultStyles}
+          className={
+            selectedTab === 'sale' ? saleSelectedStyles : defaultStyles
+          }
           value="sale"
           onClick={() => setSelectedTab('sale')}
         >
@@ -31,7 +35,7 @@ export default function Tabs() {
         </TabTrigger>
         <TabTrigger
           className={
-            selectedTab === 'location' ? selectedStyles : defaultStyles
+            selectedTab === 'location' ? locationSelectedStyles : defaultStyles
           }
           value="location"
           onClick={() => setSelectedTab('location')}
@@ -41,13 +45,14 @@ export default function Tabs() {
       </TabList>
 
       <TabContent value="sale">
-        <div className="flex flex-col gap-4 lg:gap-12 mt-6 mb-12">
+        <div className="flex flex-col gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
           <CarCard
             imageUrl="/assets/images/car.jpg"
             value={50000}
             motor={2}
             brand="Marca"
             model="Modelo"
+            variant="primary"
           />
           <CarCard
             imageUrl="/assets/images/car.jpg"
@@ -55,6 +60,7 @@ export default function Tabs() {
             motor={2}
             brand="Marca"
             model="Modelo"
+            variant="primary"
           />
           <CarCard
             imageUrl="/assets/images/car.jpg"
@@ -62,6 +68,7 @@ export default function Tabs() {
             motor={2}
             brand="Marca"
             model="Modelo"
+            variant="primary"
           />
         </div>
 
@@ -70,13 +77,14 @@ export default function Tabs() {
         </Button>
       </TabContent>
       <TabContent value="location">
-        <div className="flex flex-col gap-4 mt-6 mb-12">
+        <div className="flex flex-col gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
           <CarCard
             imageUrl="/assets/images/car.jpg"
             value={30000}
             motor={1.4}
             brand="Marca"
             model="Modelo"
+            variant="secondary"
           />
           <CarCard
             imageUrl="/assets/images/car.jpg"
@@ -84,6 +92,7 @@ export default function Tabs() {
             motor={2}
             brand="Marca"
             model="Modelo"
+            variant="secondary"
           />
           <CarCard
             imageUrl="/assets/images/car.jpg"
@@ -91,10 +100,11 @@ export default function Tabs() {
             motor={2.5}
             brand="Marca"
             model="Modelo"
+            variant="secondary"
           />
         </div>
 
-        <Button variant="filled" color="primary">
+        <Button variant="filled" color="secondary">
           Ver todos
         </Button>
       </TabContent>
