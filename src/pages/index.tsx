@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-12 lg:my-16 text-center mx-auto">
+      <section className="my-12 lg:my-16 text-center mx-auto px-6">
         <h1 className="font-bold text-primary text-xl lg:text-2xl">
           Veículos em destaque
         </h1>
@@ -46,6 +46,27 @@ export default function Home() {
 
         <div className="max-w-2xl mx-auto">
           <Tabs />
+        </div>
+      </section>
+
+      <section className="relative my-12 h-[40vh] lg:h-[80vh]">
+        <img
+          className="absolute w-full h-full object-cover"
+          src="/assets/images/woman-in-car.jpg"
+          alt="Woman in car enjoying the day"
+        />
+
+        <div className="absolute w-full h-full bg-gray-900/50 text-right text-gray-50 px-6 py-10 lg:py-24">
+          <div className="lg:max-w-3xl mx-auto">
+            <h1 className="font-bold text-2xl lg:text-4xl">
+              Aproveite nossos diferenciais
+            </h1>
+            <ul className="flex flex-col gap-2 lg:gap-4 py-6 lg:py-10">
+              <li>Entrega para todo o Brasil</li>
+              <li>Documentação inclusa</li>
+              <li>Tanque cheio</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
