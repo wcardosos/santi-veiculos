@@ -69,6 +69,76 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="max-w-5xl mx-auto py-0 px-6">
+        <h1 className="text-2xl font-bold text-primary">
+          Por que escolher a Santi Veículos?
+        </h1>
+        <div className="grid grid-rows-2 mt-6 lg:mt-12 gap-4 lg:gap-12">
+          <div className="grid grid-rows-3 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="text-center">
+              <img
+                className="mx-auto"
+                src="/assets/svg/steering-wheel.svg"
+                alt=""
+              />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Compra, venda e troca
+              </h2>
+              <p>
+                Compra, venda e troca de veículos, com documentação já inclusa!
+              </p>
+            </div>
+            <div className="text-center">
+              <img className="mx-auto" src="/assets/svg/key.svg" alt="" />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Locação
+              </h2>
+              <p>
+                Perfeito para você que é motorista de aplicativo. Disponível
+                também para empresas.
+              </p>
+            </div>
+            <div className="text-center">
+              <img className="mx-auto" src="/assets/svg/shield.svg" alt="" />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Seguro
+              </h2>
+              <p>
+                A nossa parceria com a{' '}
+                <strong className="text-primary">MdBroker Seguros</strong> te
+                deixa preparado para futuras surpresas desagradáveis.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-rows-3 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="text-center">
+              <img className="mx-auto" src="/assets/svg/money.svg" alt="" />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Financiamento
+              </h2>
+              <p>
+                Encontre a melhor taxa para você a partir da nossa parceria com
+                a <strong className="text-primary">Dryve</strong>
+              </p>
+            </div>
+            <div className="text-center">
+              <img className="mx-auto" src="/assets/svg/history.svg" alt="" />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Laudo cautelar
+              </h2>
+              <p>Saiba tudo o que já aconteceu com seu veículo</p>
+            </div>
+            <div className="text-center">
+              <img className="mx-auto" src="/assets/svg/wallet.svg" alt="" />
+              <h2 className="font-bold text-lg text-primary mt-4 mb-2">
+                Pagamento descomplicado
+              </h2>
+              <p>Aceitamos PIX e todos os cartões de crédito</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
