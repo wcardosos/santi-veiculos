@@ -173,6 +173,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="text-center text-primary px-6">
+        <h1 className="font-bold text-xl">
+          VEÍCULOS COM PREÇOS ACESSÍVEIS E A QUALIDADE QUE VOCÊ PROCURA
+        </h1>
+      </section>
     </main>
   )
 }
