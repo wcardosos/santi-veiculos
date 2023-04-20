@@ -11,14 +11,19 @@ export default function Home() {
       <Header />
 
       <section className="relative min-h-[80vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[80vh] overflow-hidden pb-6">
-        <video
+        {/* <video
           className="absolute w-full h-full object-cover"
           autoPlay
           muted
           loop
         >
           <source src="/assets/videos/man-driving.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+        <img
+          className="absolute w-full h-full object-cover"
+          src="/assets/gifs/man-driving.gif"
+          alt=""
+        />
 
         <div className="bg-primary/60 w-full h-full absolute text-gray-50 py-16 px-6">
           <h1 className="font-bold text-3xl lg:text-5xl">
