@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
 import { ArrowRight } from 'phosphor-react'
@@ -189,6 +190,8 @@ export default function Home() {
         </p>
         <ContactButton />
       </section>
+
+      <Footer />
     </main>
   )
 }
