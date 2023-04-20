@@ -1,4 +1,5 @@
 import Button from '@/components/Button'
+import ContactButton from '@/components/ContactButton'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
 import { ArrowRight } from 'phosphor-react'
@@ -178,6 +179,15 @@ export default function Home() {
         <h1 className="font-bold text-xl">
           VEÍCULOS COM PREÇOS ACESSÍVEIS E A QUALIDADE QUE VOCÊ PROCURA
         </h1>
+      </section>
+
+      <section className="my-12 px-6">
+        <h1 className="text-primary font-bold text-xl">Contato</h1>
+        <p className="mt-4 mb-6">
+          Se interessou por nossos serviços e quer saber mais ? Fale conosco
+          pelo WhatsApp!
+        </p>
+        <ContactButton />
       </section>
     </main>
   )
