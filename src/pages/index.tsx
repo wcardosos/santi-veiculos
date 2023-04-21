@@ -3,29 +3,22 @@ import ContactButton from '@/components/ContactButton'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
-import { ArrowRight } from 'phosphor-react'
+import { AirplaneTilt, ArrowRight, Files, GasPump } from 'phosphor-react'
 
 export default function Home() {
   return (
     <main>
-      <Header />
-
-      <section className="relative min-h-[80vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[80vh] overflow-hidden pb-6">
-        {/* <video
-          className="absolute w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-        >
-          <source src="/assets/videos/man-driving.mp4" type="video/mp4" />
-        </video> */}
+      <section className="relative min-h-[90vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[90vh] overflow-hidden">
         <img
           className="absolute w-full h-full object-cover"
-          src="/assets/gifs/man-driving.gif"
+          src="/assets/images/people-traveling.jpg"
           alt=""
         />
+        <div className="absolute w-full">
+          <Header />
+        </div>
 
-        <div className="bg-primary/60 w-full h-full absolute text-gray-50 py-16 px-6">
+        <div className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24 px-6">
           <h1 className="font-bold text-3xl lg:text-5xl">
             Encontre o carro dos{' '}
             <span className="text-orange-400">seus sonhos</span>
@@ -41,6 +34,21 @@ export default function Home() {
               Carros em destaque
             </Button>
             <Button variant="ghost">Serviços</Button>
+          </div>
+
+          <div className="flex flex-col gap-4 items-center pt-12">
+            <div className="flex gap-2 items-center">
+              <AirplaneTilt size={24} />
+              <span>Entrega para todo o Brasil</span>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Files size={24} />
+              <span>Documentação inclusa</span>
+            </div>
+            <div className="flex gap-2 items-center">
+              <GasPump size={24} />
+              <span>Tanque cheio</span>
+            </div>
           </div>
         </div>
       </section>
