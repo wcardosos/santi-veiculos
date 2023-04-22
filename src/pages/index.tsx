@@ -8,7 +8,7 @@ import { AirplaneTilt, ArrowRight, Files, GasPump } from 'phosphor-react'
 export default function Home() {
   return (
     <main>
-      <section className="relative min-h-[90vh] sm:min-h-[100vh] md:min-h-[50vh] lg:min-h-[90vh] overflow-hidden">
+      <section className="relative min-h-screen md:min-h-[60vh] lg:min-h-screen">
         <img
           className="absolute w-full h-full object-cover"
           src="/assets/images/people-traveling.jpg"
