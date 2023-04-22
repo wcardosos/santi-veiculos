@@ -18,36 +18,38 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24 px-6">
-          <h1 className="font-bold text-3xl lg:text-5xl">
-            Encontre o carro dos{' '}
-            <span className="text-orange-400">seus sonhos</span>
-          </h1>
-          <p className="mt-6 max-w-md lg:max-w-lg">
-            Com qualidade e procedência, oferecemos opções acessíveis e
-            confiáveis para atender às suas necessidades. Acesse os nossos
-            veículos disponíveis e encontre o que procura!
-          </p>
+        <div className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24">
+          <div className="max-w-5xl mx-auto px-6">
+            <h1 className="font-bold text-3xl lg:text-5xl">
+              Encontre o carro dos{' '}
+              <span className="text-orange-400">seus sonhos</span>
+            </h1>
+            <p className="mt-6 max-w-md lg:max-w-lg">
+              Com qualidade e procedência, oferecemos opções acessíveis e
+              confiáveis para atender às suas necessidades. Acesse os nossos
+              veículos disponíveis e encontre o que procura!
+            </p>
 
-          <div className="grid grid-rows-2 gap-4 mt-16">
-            <Button variant="filled" color="secondary">
-              Carros em destaque
-            </Button>
-            <Button variant="ghost">Serviços</Button>
-          </div>
+            <div className="grid grid-rows-2 gap-4 mt-16">
+              <Button variant="filled" color="secondary">
+                Carros em destaque
+              </Button>
+              <Button variant="ghost">Serviços</Button>
+            </div>
 
-          <div className="flex flex-col gap-4 items-center pt-12">
-            <div className="flex gap-2 items-center">
-              <AirplaneTilt size={24} />
-              <span>Entrega para todo o Brasil</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <Files size={24} />
-              <span>Documentação inclusa</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <GasPump size={24} />
-              <span>Tanque cheio</span>
+            <div className="flex flex-col gap-4 items-center pt-12">
+              <div className="flex gap-2 items-center">
+                <AirplaneTilt size={24} />
+                <span>Entrega para todo o Brasil</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <Files size={24} />
+                <span>Documentação inclusa</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <GasPump size={24} />
+                <span>Tanque cheio</span>
+              </div>
             </div>
           </div>
         </div>
@@ -60,7 +62,7 @@ export default function Home() {
 
         <div className="w-64 lg:w-96 h-[2px] bg-secondary my-6 mx-auto" />
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto px-6">
           <Tabs />
         </div>
       </section>
@@ -195,7 +197,7 @@ export default function Home() {
         </h1>
       </section>
 
-      <section className="my-12 px-6">
+      <section className="my-12 max-w-5xl mx-auto py-0 px-6">
         <h1 className="text-primary font-bold text-xl">Contato</h1>
         <p className="mt-4 mb-6">
           Se interessou por nossos serviços e quer saber mais ? Fale conosco
