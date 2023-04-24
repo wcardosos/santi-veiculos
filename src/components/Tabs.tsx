@@ -45,7 +45,7 @@ export default function Tabs() {
       </TabList>
 
       <TabContent value="sale">
-        <div className="flex flex-col gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
           <CarCard
             imageUrl="/assets/images/car.jpg"
             value={50000}
@@ -77,7 +77,7 @@ export default function Tabs() {
         </Button>
       </TabContent>
       <TabContent value="location">
-        <div className="flex flex-col gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
           <CarCard
             imageUrl="/assets/images/car.jpg"
             value={30000}
