@@ -1,9 +1,10 @@
 import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
+import DifferentialsList from '@/components/DifferentialsList'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
-import { AirplaneTilt, ArrowRight, Files, GasPump } from 'phosphor-react'
+import { ArrowRight } from 'phosphor-react'
 
 export default function Home() {
   return (
@@ -37,20 +38,7 @@ export default function Home() {
               <Button variant="ghost">Serviços</Button>
             </div>
 
-            <div className="flex flex-col gap-4 items-center pt-12">
-              <div className="flex gap-2 items-center">
-                <AirplaneTilt size={24} />
-                <span>Entrega para todo o Brasil</span>
-              </div>
-              <div className="flex gap-2 items-center">
-                <Files size={24} />
-                <span>Documentação inclusa</span>
-              </div>
-              <div className="flex gap-2 items-center">
-                <GasPump size={24} />
-                <span>Tanque cheio</span>
-              </div>
-            </div>
+            <DifferentialsList />
           </div>
         </div>
       </section>
@@ -67,7 +55,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative my-12 h-[40vh] lg:h-[80vh]">
+      <section className="relative my-12 h-[50vh] lg:h-[80vh]">
         <img
           className="absolute w-full h-full object-cover"
           src="/assets/images/woman-in-car.jpg"
@@ -79,11 +67,7 @@ export default function Home() {
             <h1 className="font-bold text-2xl lg:text-4xl">
               Aproveite nossos diferenciais
             </h1>
-            <ul className="flex flex-col gap-2 lg:gap-4 py-6 lg:py-10">
-              <li>Entrega para todo o Brasil</li>
-              <li>Documentação inclusa</li>
-              <li>Tanque cheio</li>
-            </ul>
+            <DifferentialsList position="right" />
           </div>
         </div>
       </section>
