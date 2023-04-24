@@ -9,15 +9,15 @@ import { ArrowRight } from 'phosphor-react'
 export default function Home() {
   return (
     <main>
-      <section className="relative min-h-screen md:min-h-[60vh] lg:min-h-screen">
+      <section
+        className="relative min-h-screen md:min-h-[60vh] lg:min-h-screen"
+        id="home"
+      >
         <img
           className="absolute w-full h-full object-cover"
           src="/assets/images/people-traveling.jpg"
           alt=""
         />
-        <div className="absolute w-full">
-          <Header />
-        </div>
 
         <div className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24">
           <div className="max-w-5xl mx-auto px-6">
@@ -41,9 +41,16 @@ export default function Home() {
             <DifferentialsList />
           </div>
         </div>
+
+        <div className="absolute w-full">
+          <Header />
+        </div>
       </section>
 
-      <section className="my-12 lg:my-16 text-center mx-auto px-6">
+      <section
+        id="vehicles"
+        className="my-12 lg:my-16 text-center mx-auto px-6"
+      >
         <h1 className="font-bold text-primary text-xl lg:text-2xl">
           Veículos em destaque
         </h1>
@@ -55,7 +62,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative my-12 h-[50vh] lg:h-[80vh]">
+      <section
+        id="differentials"
+        className="relative my-12 h-[50vh] lg:h-[80vh]"
+      >
         <img
           className="absolute w-full h-full object-cover"
           src="/assets/images/woman-in-car.jpg"
@@ -72,7 +82,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto py-0 px-6">
+      <section id="why-choose-us" className="max-w-5xl mx-auto py-0 px-6">
         <h1 className="text-2xl font-bold text-primary">
           Por que escolher a Santi Veículos?
         </h1>
@@ -142,7 +152,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gray-900 w-full h-[80vh] lg:h-[60vh] relative my-12">
+      <section
+        id="services"
+        className="bg-gray-900 w-full h-[80vh] lg:h-[60vh] relative my-12"
+      >
         <div className="w-full h-full absolute grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1">
           <img
             className="w-full max-h-[40vh] lg:max-h-fit h-full object-cover opacity-30"
@@ -181,7 +194,7 @@ export default function Home() {
         </h1>
       </section>
 
-      <section className="my-12 max-w-5xl mx-auto py-0 px-6">
+      <section id="contact" className="my-12 max-w-5xl mx-auto py-0 px-6">
         <h1 className="text-primary font-bold text-xl">Contato</h1>
         <p className="mt-4 mb-6">
           Se interessou por nossos serviços e quer saber mais ? Fale conosco
