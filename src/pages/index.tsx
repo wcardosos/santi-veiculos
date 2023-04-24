@@ -4,6 +4,7 @@ import DifferentialsList from '@/components/DifferentialsList'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
+import { Separator } from '@radix-ui/react-separator'
 import { ArrowRight } from 'phosphor-react'
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
           alt=""
         />
 
-        <div className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24">
+        <article className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24">
           <div className="max-w-5xl mx-auto px-6">
             <h1 className="font-bold text-3xl lg:text-5xl">
               Encontre o carro dos{' '}
@@ -40,11 +41,11 @@ export default function Home() {
 
             <DifferentialsList />
           </div>
-        </div>
+        </article>
 
-        <div className="absolute w-full">
+        <article className="absolute w-full">
           <Header />
-        </div>
+        </article>
       </section>
 
       <section
@@ -55,11 +56,11 @@ export default function Home() {
           Veículos em destaque
         </h1>
 
-        <div className="w-64 lg:w-96 h-[2px] bg-secondary my-6 mx-auto" />
+        <Separator className="w-64 lg:w-96 h-[2px] bg-secondary my-6 mx-auto" />
 
-        <div className="max-w-5xl mx-auto px-6">
+        <article className="max-w-5xl mx-auto px-6">
           <Tabs />
-        </div>
+        </article>
       </section>
 
       <section
@@ -72,21 +73,21 @@ export default function Home() {
           alt="Woman in car enjoying the day"
         />
 
-        <div className="absolute w-full h-full bg-gray-900/50 text-right text-gray-50 px-6 py-10 lg:py-24">
+        <article className="absolute w-full h-full bg-gray-900/50 text-right text-gray-50 px-6 py-10 lg:py-24">
           <div className="lg:max-w-3xl mx-auto">
             <h1 className="font-bold text-2xl lg:text-4xl">
               Aproveite nossos diferenciais
             </h1>
             <DifferentialsList position="right" />
           </div>
-        </div>
+        </article>
       </section>
 
       <section id="why-choose-us" className="max-w-5xl mx-auto py-0 px-6">
         <h1 className="text-2xl font-bold text-primary">
           Por que escolher a Santi Veículos?
         </h1>
-        <div className="grid grid-rows-2 mt-6 lg:mt-12 gap-4 lg:gap-12">
+        <article className="grid grid-rows-2 mt-6 lg:mt-12 gap-4 lg:gap-12">
           <div className="grid grid-rows-3 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="text-center">
               <img
@@ -149,7 +150,7 @@ export default function Home() {
               <p>Aceitamos PIX e todos os cartões de crédito</p>
             </div>
           </div>
-        </div>
+        </article>
       </section>
 
       <section

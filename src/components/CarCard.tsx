@@ -18,7 +18,7 @@ export default function CarCard({
   variant,
 }: CarCardProps) {
   return (
-    <div className="bg-gray-100 shadow-md">
+    <article className="bg-gray-100 shadow-md">
       <img
         className="w-full h-48 object-cover rounded-t-lg"
         src={imageUrl}
@@ -45,6 +45,6 @@ export default function CarCard({
           </Button>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
