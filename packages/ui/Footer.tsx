@@ -5,7 +5,7 @@ import {
   WhatsappLogo,
 } from 'phosphor-react'
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-primary text-gray-50 px-6 py-12">
       <div className="max-w-5xl mx-auto py-0 px-6">
