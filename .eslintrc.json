@@ -1,3 +1,9 @@
 {
-  "extends": "@rocketseat/eslint-config/react"
+  "root": true,
+  "extends": "@rocketseat/eslint-config/react",
+  "settings": {
+    "next": {
+      "rootDir": ["apps/*/"]
+    }
+  }
 }

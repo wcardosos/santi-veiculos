@@ -1,7 +1,7 @@
 import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import DifferentialsList from '@/components/DifferentialsList'
-import Footer from '@/components/Footer'
+import { Footer } from 'ui'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
 import { Separator } from '@radix-ui/react-separator'
