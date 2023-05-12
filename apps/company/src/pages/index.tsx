@@ -1,11 +1,11 @@
 import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import DifferentialsList from '@/components/DifferentialsList'
-import Footer from 'ui/Footer'
 import Header from '@/components/Header'
 import Tabs from '@/components/Tabs'
 import { Separator } from '@radix-ui/react-separator'
 import { ArrowRight } from 'phosphor-react'
+import { Footer } from 'ui'
 
 export default function Home() {
   return (
