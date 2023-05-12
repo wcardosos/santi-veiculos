@@ -1,8 +1,8 @@
-import React from 'react'
+import { ForwardRefExoticComponent } from 'react'
 import { IconProps } from 'phosphor-react'
 
 interface DifferentialProps {
-  icon: React.ForwardRefExoticComponent<IconProps>
+  icon: ForwardRefExoticComponent<IconProps>
   text: string
   reverse?: boolean
 }
