@@ -7,18 +7,21 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
   },
-  "devDependencies": {
+  "dependencies": {
     "@radix-ui/react-separator": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.3",
+    "phosphor-react": "^1.4.1",
+    "react": "18.2.0"
+  },
+  "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "autoprefixer": "10.4.14",
+    "autoprefixer": "^10.4.14",
     "eslint": "^7.32.0",
-    "phosphor-react": "^1.4.1",
-    "postcss": "8.4.22",
-    "react": "18.2.0",
-    "tailwindcss": "3.3.1",
+    "eslint-plugin-react": "^7.32.2",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
     "tsconfig": "*",
     "typescript": "^4.5.2"
   }

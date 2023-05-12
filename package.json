@@ -7,9 +7,12 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
     "@rocketseat/eslint-config": "^1.2.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^7.32.0",
+    "postcss": "^8.4.23",
     "prettier": "^2.5.1",
+    "tailwindcss": "^3.3.2",
     "turbo": "^1.9.3"
   },
   "name": "santi-veiculos",

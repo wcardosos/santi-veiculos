@@ -1,6 +1,5 @@
-import * as React from 'react'
 import Footer from './Footer'
 
-export {
-  Footer
-}
+import './globals.css'
+
+export { Footer }
