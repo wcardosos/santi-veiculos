@@ -49,17 +49,19 @@ export default function Tabs() {
       <TabContent value="sale">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
           {!hasCarsToSale && <p>Carregando...</p>}
-          {carsToSale.map(({ brand, model, motor, slug, value }) => (
-            <CarCard
-              key={slug}
-              imageUrl="/assets/images/car.jpg"
-              brand={brand}
-              model={model}
-              motor={motor}
-              value={value}
-              variant="primary"
-            />
-          ))}
+          {carsToSale.map(
+            ({ brand, model, motor, slug, value, imagesUrls }) => (
+              <CarCard
+                key={slug}
+                imageUrl={imagesUrls[0]}
+                brand={brand}
+                model={model}
+                motor={motor}
+                value={value}
+                variant="primary"
+              />
+            ),
+          )}
         </div>
 
         {hasCarsToSale && (

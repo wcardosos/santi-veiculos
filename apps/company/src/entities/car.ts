@@ -6,7 +6,9 @@ export interface Car {
   model: string
   year: number
   slug: string
+  imagesUrls: string[]
   value: number
+  isSold: boolean
   motor: number
   fuel: Fuel
   tranmission: Transmission

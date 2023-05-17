@@ -4,8 +4,12 @@ import { HttpProvider } from '@/providers/http-provider'
 type CmsFuel = 'gas' | 'alcohol' | 'flex'
 type CmsTransmission = 'manual' | 'automatic'
 
+interface CmsAsset {
+  url: string
+}
 interface CmsSale {
   value: number
+  issold: boolean
 }
 
 interface CmsCar {
@@ -19,6 +23,7 @@ interface GetAllGarsToSaleQueryResult {
   model: string
   year: number
   slug: string
+  images: CmsAsset[]
   sale: CmsSale[]
   car: CmsCar[]
 }
@@ -40,8 +45,12 @@ export class GetAllCarsToSaleService {
         model
         year
         slug
+        images {
+          url
+        }
         sale: _allReferencingSales(first:1) {
           value
+          issold
         }
         car: _allReferencingCars(first: 1){
           motor
@@ -68,12 +77,15 @@ export class GetAllCarsToSaleService {
         sale,
         slug,
         year,
+        images,
       }: GetAllGarsToSaleQueryResult) => ({
         brand,
         model,
         year,
         slug,
+        imagesUrls: this.getImagesUrls(images),
         value: sale[0].value,
+        isSold: sale[0].issold,
         motor: car[0].motor,
         fuel: this.getFuelFromCms(car[0].fuel),
         transmission: this.getTransmissionFromCms(car[0].transmission),
@@ -103,5 +115,9 @@ export class GetAllCarsToSaleService {
       default:
         return null
     }
+  }
+
+  private getImagesUrls(images: CmsAsset[]) {
+    return images.map((image) => image.url)
   }
 }
