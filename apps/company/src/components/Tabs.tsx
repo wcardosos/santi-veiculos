@@ -8,11 +8,13 @@ import {
 import { useState } from 'react'
 import CarCard from './CarCard'
 import Button from './Button'
+import useCarsToSale from '@/hooks/useCarsToSale'
 
 type Tab = 'sale' | 'location'
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
+  const { carsToSale, hasCarsToSale } = useCarsToSale()
 
   const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
@@ -45,39 +47,29 @@ export default function Tabs() {
       </TabList>
 
       <TabContent value="sale">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
+          {!hasCarsToSale && <p>Carregando...</p>}
+          {carsToSale.map(({ brand, model, motor, slug, value }) => (
+            <CarCard
+              key={slug}
+              imageUrl="/assets/images/car.jpg"
+              brand={brand}
+              model={model}
+              motor={motor}
+              value={value}
+              variant="primary"
+            />
+          ))}
         </div>
 
-        <Button variant="filled" color="primary">
-          Ver todos
-        </Button>
+        {hasCarsToSale && (
+          <Button variant="filled" color="primary">
+            Ver todos
+          </Button>
+        )}
       </TabContent>
       <TabContent value="location">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
           <CarCard
             imageUrl="/assets/images/car.jpg"
             value={30000}
