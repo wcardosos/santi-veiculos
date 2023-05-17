@@ -7,10 +7,6 @@ type CmsTransmission = 'manual' | 'automatic'
 interface CmsAsset {
   url: string
 }
-interface CmsSale {
-  value: number
-  issold: boolean
-}
 
 interface CmsCar {
   motor: number
@@ -18,14 +14,19 @@ interface CmsCar {
   transmission: CmsTransmission
 }
 
-interface GetAllGarsToSaleQueryResult {
+interface CmsVehicle {
   brand: string
   model: string
   year: number
   slug: string
   images: CmsAsset[]
-  sale: CmsSale[]
   car: CmsCar[]
+}
+
+interface GetAllGarsToSaleQueryResult {
+  value: number
+  issold: boolean
+  vehicle: CmsVehicle
 }
 
 export const API_URL = 'https://graphql.datocms.com/'
@@ -40,22 +41,22 @@ export class GetAllCarsToSaleService {
 
   async execute(): Promise<Car[]> {
     const query = `{
-      allVehicles {
-        brand
-        model
-        year
-        slug
-        images {
-          url
-        }
-        sale: _allReferencingSales(first:1) {
-          value
-          issold
-        }
-        car: _allReferencingCars(first: 1){
-          motor
-          fuel
-          transmission
+      allSales(filter: { issold: { eq: false } }) {
+        value
+        issold
+        vehicle {
+          brand
+          model
+          year
+          slug
+          images {
+            url
+          }
+          car: _allReferencingCars(first: 1) {
+            motor
+            fuel
+            transmission
+          }
         }
       }
     }`
@@ -69,27 +70,25 @@ export class GetAllCarsToSaleService {
       },
     )
 
-    return responseData.data.allVehicles.map(
+    return responseData.data.allSales.map(
       ({
-        brand,
-        car,
-        model,
-        sale,
-        slug,
-        year,
-        images,
-      }: GetAllGarsToSaleQueryResult) => ({
-        brand,
-        model,
-        year,
-        slug,
-        imagesUrls: this.getImagesUrls(images),
-        value: sale[0].value,
-        isSold: sale[0].issold,
-        motor: car[0].motor,
-        fuel: this.getFuelFromCms(car[0].fuel),
-        transmission: this.getTransmissionFromCms(car[0].transmission),
-      }),
+        value,
+        issold,
+        vehicle: { brand, model, year, slug, images, car },
+      }: GetAllGarsToSaleQueryResult) => {
+        return {
+          brand,
+          model,
+          year,
+          slug,
+          imagesUrls: this.getImagesUrls(images),
+          value,
+          isSold: issold,
+          motor: car[0].motor,
+          fuel: this.getFuelFromCms(car[0].fuel),
+          transmission: this.getTransmissionFromCms(car[0].transmission),
+        }
+      },
     )
   }
 

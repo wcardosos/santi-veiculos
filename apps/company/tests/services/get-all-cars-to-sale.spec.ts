@@ -9,24 +9,30 @@ describe('GetAllCarsToSaleService', () => {
   httpProviderPostMock.mockResolvedValue({
     data: {
       data: {
-        allVehicles: [
+        allSales: [
           {
-            brand: 'Volkswagen',
-            model: 'Golf',
-            year: 2013,
-            slug: 'volkswagen-golf-2013',
-            images: [{ url: 'image url' }],
-            sale: [{ value: 30000, issold: false }],
-            car: [{ motor: 1.6, fuel: 'gas', transmission: 'manual' }],
+            value: 30000,
+            issold: false,
+            vehicle: {
+              brand: 'Volkswagen',
+              model: 'Golf',
+              year: 2013,
+              slug: 'volkswagen-golf-2013',
+              images: [{ url: 'image url' }],
+              car: [{ motor: 1.6, fuel: 'gas', transmission: 'manual' }],
+            },
           },
           {
-            brand: 'Volkswagen',
-            model: 'Fox',
-            year: 2013,
-            slug: 'volkswagen-fox-2013',
-            images: [{ url: 'image url' }],
-            sale: [{ value: 30000, issold: false }],
-            car: [{ motor: 1.0, fuel: 'gas', transmission: 'manual' }],
+            value: 30000,
+            issold: false,
+            vehicle: {
+              brand: 'Volkswagen',
+              model: 'Fox',
+              year: 2013,
+              slug: 'volkswagen-fox-2013',
+              images: [{ url: 'image url' }],
+              car: [{ motor: 1.0, fuel: 'gas', transmission: 'manual' }],
+            },
           },
         ],
       },
