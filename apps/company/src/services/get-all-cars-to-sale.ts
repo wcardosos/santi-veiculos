@@ -1,4 +1,5 @@
 import { Car } from '@/entities/car'
+import { carsForSaleQuery } from '../graphql/queries/cars'
 import { HttpProvider } from '@/providers/http-provider'
 
 type CmsFuel = 'gas' | 'alcohol' | 'flex'
@@ -40,30 +41,9 @@ export class GetAllCarsToSaleService {
   }
 
   async execute(): Promise<Car[]> {
-    const query = `{
-      allSales(filter: { issold: { eq: false } }) {
-        value
-        issold
-        vehicle {
-          brand
-          model
-          year
-          slug
-          images {
-            url
-          }
-          car: _allReferencingCars(first: 1) {
-            motor
-            fuel
-            transmission
-          }
-        }
-      }
-    }`
-
     const { data: responseData } = await this.httpProvider.post(
       API_URL,
-      { query, variables: {} },
+      { query: carsForSaleQuery, variables: {} },
       {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${API_TOKEN}`,
