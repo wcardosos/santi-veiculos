@@ -24,7 +24,7 @@ interface CmsVehicle {
   car: CmsCar[]
 }
 
-interface GetAllGarsToSaleQueryResult {
+interface GetAllGarsForSaleQueryResult {
   value: number
   issold: boolean
   vehicle: CmsVehicle
@@ -33,7 +33,7 @@ interface GetAllGarsToSaleQueryResult {
 export const API_URL = 'https://graphql.datocms.com/'
 export const API_TOKEN = '8d97b0e25fc28f9821658d0d509037'
 
-export class GetAllCarsToSaleService {
+export class GetAllCarsForSaleService {
   private httpProvider: HttpProvider
 
   constructor(httpProvider: HttpProvider) {
@@ -55,7 +55,7 @@ export class GetAllCarsToSaleService {
         value,
         issold,
         vehicle: { brand, model, year, slug, images, car },
-      }: GetAllGarsToSaleQueryResult) => {
+      }: GetAllGarsForSaleQueryResult) => {
         return {
           brand,
           model,

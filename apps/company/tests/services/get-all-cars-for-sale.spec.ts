@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
 import { HttpProvider } from '../../src/providers/http-provider'
-import { GetAllCarsToSaleService } from '../../src/services/get-all-cars-to-sale'
+import { GetAllCarsForSaleService } from '../../src/services/get-all-cars-for-sale'
 
-describe('GetAllCarsToSaleService', () => {
+describe('GetAllCarsForSaleService', () => {
   const httpProviderMock = {} as HttpProvider
 
   const httpProviderPostMock = vi.fn()
@@ -40,11 +40,13 @@ describe('GetAllCarsToSaleService', () => {
   })
   httpProviderMock.post = httpProviderPostMock
 
-  const getAllCarsToSaleService = new GetAllCarsToSaleService(httpProviderMock)
+  const getAllCarsForSaleService = new GetAllCarsForSaleService(
+    httpProviderMock,
+  )
 
   describe('execute', () => {
     it('should return all cars', async () => {
-      const result = await getAllCarsToSaleService.execute()
+      const result = await getAllCarsForSaleService.execute()
 
       expect(result).toEqual([
         {
