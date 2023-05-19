@@ -8,15 +8,16 @@ import {
 import { useState } from 'react'
 import CarCard from './CarCard'
 import Button from './Button'
-import useCarsForSale from '@/hooks/useCarsForSale'
-import useCarsForLocation from '@/hooks/useCarsForLocation'
+import useHomePageCars from '@/hooks/useHomePageCars'
 
 type Tab = 'sale' | 'location'
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
-  const { carsForSale, hasCarsForSale } = useCarsForSale()
-  const { carsForLocation, hasCarsForLocation } = useCarsForLocation()
+  const {
+    sales: { carsForSale, hasCarsForSale },
+    locations: { carsForLocation, hasCarsForLocation },
+  } = useHomePageCars()
 
   const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
@@ -51,19 +52,17 @@ export default function Tabs() {
       <TabContent value="sale">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
           {!hasCarsForSale && <p>Carregando...</p>}
-          {carsForSale.map(
-            ({ brand, model, motor, slug, value, imagesUrls }) => (
-              <CarCard
-                key={slug}
-                imageUrl={imagesUrls[0]}
-                brand={brand}
-                model={model}
-                motor={motor}
-                value={value}
-                variant="primary"
-              />
-            ),
-          )}
+          {carsForSale.map(({ brand, model, motor, slug, value, imageUrl }) => (
+            <CarCard
+              key={slug}
+              imageUrl={imageUrl}
+              brand={brand}
+              model={model}
+              motor={motor}
+              value={value}
+              variant="primary"
+            />
+          ))}
         </div>
 
         {hasCarsForSale && (
@@ -76,10 +75,10 @@ export default function Tabs() {
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
           {!hasCarsForLocation && <p>Carregando...</p>}
           {carsForLocation.map(
-            ({ brand, model, motor, slug, value, imagesUrls }) => (
+            ({ brand, model, motor, slug, value, imageUrl }) => (
               <CarCard
                 key={slug}
-                imageUrl={imagesUrls[0]}
+                imageUrl={imageUrl}
                 brand={brand}
                 model={model}
                 motor={motor}
