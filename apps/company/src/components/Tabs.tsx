@@ -8,13 +8,15 @@ import {
 import { useState } from 'react'
 import CarCard from './CarCard'
 import Button from './Button'
-import useCarsToSale from '@/hooks/useCarsToSale'
+import useCarsForSale from '@/hooks/useCarsForSale'
+import useCarsForLocation from '@/hooks/useCarsForLocation'
 
 type Tab = 'sale' | 'location'
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
-  const { carsToSale, hasCarsToSale } = useCarsToSale()
+  const { carsForSale, hasCarsForSale } = useCarsForSale()
+  const { carsForLocation, hasCarsForLocation } = useCarsForLocation()
 
   const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
@@ -48,8 +50,8 @@ export default function Tabs() {
 
       <TabContent value="sale">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
-          {!hasCarsToSale && <p>Carregando...</p>}
-          {carsToSale.map(
+          {!hasCarsForSale && <p>Carregando...</p>}
+          {carsForSale.map(
             ({ brand, model, motor, slug, value, imagesUrls }) => (
               <CarCard
                 key={slug}
@@ -64,7 +66,7 @@ export default function Tabs() {
           )}
         </div>
 
-        {hasCarsToSale && (
+        {hasCarsForSale && (
           <Button variant="filled" color="primary">
             Ver todos
           </Button>
@@ -72,35 +74,27 @@ export default function Tabs() {
       </TabContent>
       <TabContent value="location">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={1.4}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={2.5}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
+          {!hasCarsForLocation && <p>Carregando...</p>}
+          {carsForLocation.map(
+            ({ brand, model, motor, slug, value, imagesUrls }) => (
+              <CarCard
+                key={slug}
+                imageUrl={imagesUrls[0]}
+                brand={brand}
+                model={model}
+                motor={motor}
+                value={value}
+                variant="secondary"
+              />
+            ),
+          )}
         </div>
 
-        <Button variant="filled" color="secondary">
-          Ver todos
-        </Button>
+        {hasCarsForLocation && (
+          <Button variant="filled" color="secondary">
+            Ver todos
+          </Button>
+        )}
       </TabContent>
     </TabRoot>
   )
