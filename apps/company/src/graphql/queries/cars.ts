@@ -26,7 +26,7 @@ export const carsForLocationQuery = `{
         url
       }
       car:_allReferencingCars(first: 1) {
-        transmission
+        motor
       }
     }
   }
