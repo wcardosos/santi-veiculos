@@ -12,23 +12,19 @@ describe('GetAllCarsForLocationService', () => {
         allLocations: [
           {
             value: 30000,
-            located: false,
             vehicle: {
               brand: 'Volkswagen',
               model: 'Golf',
-              year: 2013,
               slug: 'volkswagen-golf-2013',
               images: [{ url: 'image url' }],
-              car: [{ motor: 1.6, fuel: 'gas', transmission: 'manual' }],
+              car: [{ motor: 1.6 }],
             },
           },
           {
             value: 30000,
-            located: false,
             vehicle: {
               brand: 'Volkswagen',
               model: 'Fox',
-              year: 2013,
               slug: 'volkswagen-fox-2013',
               images: [{ url: 'image url' }],
               car: [{ motor: 1.0, fuel: 'gas', transmission: 'manual' }],
@@ -52,82 +48,20 @@ describe('GetAllCarsForLocationService', () => {
         {
           brand: 'Volkswagen',
           model: 'Golf',
-          year: 2013,
           slug: 'volkswagen-golf-2013',
           value: 30000,
-          located: false,
           motor: 1.6,
-          fuel: 'Gasolina',
-          transmission: 'Manual',
-          imagesUrls: ['image url'],
+          imageUrl: 'image url',
         },
         {
           brand: 'Volkswagen',
           model: 'Fox',
-          year: 2013,
           slug: 'volkswagen-fox-2013',
-          located: false,
           value: 30000,
           motor: 1,
-          fuel: 'Gasolina',
-          transmission: 'Manual',
-          imagesUrls: ['image url'],
+          imageUrl: 'image url',
         },
       ])
-    })
-
-    it('should raise an error when transmission is invalid', async () => {
-      httpProviderPostMock.mockResolvedValueOnce({
-        data: {
-          data: {
-            allLocations: [
-              {
-                value: 30000,
-                located: false,
-                vehicle: {
-                  brand: 'Volkswagen',
-                  model: 'Golf',
-                  year: 2013,
-                  slug: 'volkswagen-golf-2013',
-                  images: [{ url: 'image url' }],
-                  car: [{ motor: 1.6, fuel: 'gas', transmission: null }],
-                },
-              },
-            ],
-          },
-        },
-      })
-
-      await expect(() =>
-        getAllCarsForLocationService.execute(),
-      ).rejects.toThrowError('Invalid transmission! Value: null')
-    })
-
-    it('should raise an error when fuel is invalid', async () => {
-      httpProviderPostMock.mockResolvedValueOnce({
-        data: {
-          data: {
-            allLocations: [
-              {
-                value: 30000,
-                located: false,
-                vehicle: {
-                  brand: 'Volkswagen',
-                  model: 'Golf',
-                  year: 2013,
-                  slug: 'volkswagen-golf-2013',
-                  images: [{ url: 'image url' }],
-                  car: [{ motor: 1.6, fuel: null, transmission: 'manual' }],
-                },
-              },
-            ],
-          },
-        },
-      })
-
-      await expect(() =>
-        getAllCarsForLocationService.execute(),
-      ).rejects.toThrowError('Invalid fuel! Value: null')
     })
   })
 })

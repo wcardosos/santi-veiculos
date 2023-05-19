@@ -1,3 +1,4 @@
+import { Car } from '@/entities/car'
 import { HttpProvider } from '@/providers/http-provider'
 
 type CmsFuel = 'gas' | 'alcohol' | 'flex'
@@ -20,6 +21,11 @@ export interface CmsVehicle {
   slug: string
   images: CmsAsset[]
   car: CmsCar[]
+}
+
+export interface CmsCarTransaction {
+  value: number
+  vehicle: CmsVehicle
 }
 
 export abstract class BaseCarsService {
@@ -47,31 +53,24 @@ export abstract class BaseCarsService {
     return data
   }
 
-  protected getFuelFromCms(fuel: CmsFuel) {
-    switch (fuel) {
-      case 'gas':
-        return 'Gasolina'
-      case 'alcohol':
-        return 'Álcool'
-      case 'flex':
-        return 'Flex'
-      default:
-        throw new Error(`Invalid fuel! Value: ${fuel}`)
-    }
+  protected getMainImageUrl(assets: CmsAsset[]) {
+    return assets[0].url
   }
 
-  protected getTransmissionFromCms(transmission: CmsTransmission) {
-    switch (transmission) {
-      case 'automatic':
-        return 'Automático'
-      case 'manual':
-        return 'Manual'
-      default:
-        throw new Error(`Invalid transmission! Value: ${transmission}`)
-    }
+  protected getCarMotor(car: CmsCar[]): number {
+    return car[0].motor
   }
 
-  protected getImagesUrls(images: CmsAsset[]) {
-    return images.map((image) => image.url)
+  protected composeCarsData(carsTransactions: CmsCarTransaction[]): Car[] {
+    return carsTransactions.map(
+      ({ value, vehicle: { brand, model, slug, images, car } }) => ({
+        brand,
+        model,
+        slug,
+        imageUrl: this.getMainImageUrl(images),
+        value,
+        motor: this.getCarMotor(car),
+      }),
+    )
   }
 }

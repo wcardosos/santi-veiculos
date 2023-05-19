@@ -1,49 +1,21 @@
+import { Car } from '@/entities/car'
 import { carsForLocationQuery } from '../graphql/queries/cars'
-import { CarForLocation } from '@/entities/car-for-location'
-import { BaseCarsService, CmsVehicle } from './base-cars-service'
-
-interface CmsCarForLocation {
-  value: number
-  located: boolean
-  vehicle: CmsVehicle
-}
+import { BaseCarsService, CmsCarTransaction } from './base-cars-service'
 
 interface GetAllGarsForLocationQueryResult {
   data: {
-    allLocations: CmsCarForLocation[]
+    allLocations: CmsCarTransaction[]
   }
 }
 export class GetAllCarsForLocationService extends BaseCarsService {
-  async execute(): Promise<CarForLocation[]> {
+  async execute(): Promise<Car[]> {
+    const queryVariables = {}
     const responseData =
       await this.requestData<GetAllGarsForLocationQueryResult>(
         carsForLocationQuery,
-        {},
+        queryVariables,
       )
 
-    console.log(`responseData: ${JSON.stringify(responseData)}`)
-
-    return responseData.data.allLocations.map((carForLocation) =>
-      this.composeCarData(carForLocation),
-    )
-  }
-
-  protected composeCarData({
-    value,
-    located,
-    vehicle: { brand, model, year, slug, images, car },
-  }: CmsCarForLocation): CarForLocation {
-    return {
-      brand,
-      model,
-      year,
-      slug,
-      imagesUrls: this.getImagesUrls(images),
-      value,
-      located,
-      motor: car[0].motor,
-      fuel: this.getFuelFromCms(car[0].fuel),
-      transmission: this.getTransmissionFromCms(car[0].transmission),
-    }
+    return this.composeCarsData(responseData.data.allLocations)
   }
 }
