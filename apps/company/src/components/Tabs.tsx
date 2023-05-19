@@ -6,18 +6,14 @@ import {
 } from '@radix-ui/react-tabs'
 
 import { useState } from 'react'
-import CarCard from './CarCard'
-import Button from './Button'
 import useHomePageCars from '@/hooks/useHomePageCars'
+import FeaturedCarsList from './FeaturedCarsList'
 
 type Tab = 'sale' | 'location'
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
-  const {
-    sales: { carsForSale, hasCarsForSale },
-    locations: { carsForLocation, hasCarsForLocation },
-  } = useHomePageCars()
+  const { carsForSale, carsForLocation } = useHomePageCars()
 
   const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
@@ -50,50 +46,10 @@ export default function Tabs() {
       </TabList>
 
       <TabContent value="sale">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
-          {!hasCarsForSale && <p>Carregando...</p>}
-          {carsForSale.map(({ brand, model, motor, slug, value, imageUrl }) => (
-            <CarCard
-              key={slug}
-              imageUrl={imageUrl}
-              brand={brand}
-              model={model}
-              motor={motor}
-              value={value}
-              variant="primary"
-            />
-          ))}
-        </div>
-
-        {hasCarsForSale && (
-          <Button variant="filled" color="primary">
-            Ver todos
-          </Button>
-        )}
+        <FeaturedCarsList cars={carsForSale} type="sale" />
       </TabContent>
       <TabContent value="location">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
-          {!hasCarsForLocation && <p>Carregando...</p>}
-          {carsForLocation.map(
-            ({ brand, model, motor, slug, value, imageUrl }) => (
-              <CarCard
-                key={slug}
-                imageUrl={imageUrl}
-                brand={brand}
-                model={model}
-                motor={motor}
-                value={value}
-                variant="secondary"
-              />
-            ),
-          )}
-        </div>
-
-        {hasCarsForLocation && (
-          <Button variant="filled" color="secondary">
-            Ver todos
-          </Button>
-        )}
+        <FeaturedCarsList cars={carsForLocation} type="location" />
       </TabContent>
     </TabRoot>
   )

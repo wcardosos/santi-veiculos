@@ -8,9 +8,6 @@ export default function useHomePageCars() {
   const [carsForSale, setCarsForSale] = useState<Car[]>([])
   const [carsForLocation, setCarsForLocation] = useState<Car[]>([])
 
-  const hasCarsForSale = !!carsForSale.length
-  const hasCarsForLocation = !!carsForLocation.length
-
   useEffect(() => {
     if (carsForSale.length) return
     const httpProvider = new HttpProvider()
@@ -30,13 +27,7 @@ export default function useHomePageCars() {
   })
 
   return {
-    sales: {
-      carsForSale,
-      hasCarsForSale,
-    },
-    locations: {
-      carsForLocation,
-      hasCarsForLocation,
-    },
+    carsForSale,
+    carsForLocation,
   }
 }
