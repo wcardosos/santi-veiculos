@@ -8,8 +8,7 @@ export interface Car {
   slug: string
   imagesUrls: string[]
   value: number
-  isSold: boolean
   motor: number
   fuel: Fuel
-  tranmission: Transmission
+  transmission: Transmission
 }
