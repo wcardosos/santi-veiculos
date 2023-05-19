@@ -6,13 +6,14 @@ import {
 } from '@radix-ui/react-tabs'
 
 import { useState } from 'react'
-import CarCard from './CarCard'
-import Button from './Button'
+import useHomePageCars from '@/hooks/useHomePageCars'
+import FeaturedCarsList from './FeaturedCarsList'
 
 type Tab = 'sale' | 'location'
 
 export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState<Tab>('sale')
+  const { carsForSale, carsForLocation } = useHomePageCars()
 
   const saleSelectedStyles =
     'text-primary font-bold w-1/2 py-2 border-b-2 border-primary'
@@ -45,68 +46,10 @@ export default function Tabs() {
       </TabList>
 
       <TabContent value="sale">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={50000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="primary"
-          />
-        </div>
-
-        <Button variant="filled" color="primary">
-          Ver todos
-        </Button>
+        <FeaturedCarsList cars={carsForSale} type="sale" />
       </TabContent>
       <TabContent value="location">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12">
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={1.4}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={2}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
-          <CarCard
-            imageUrl="/assets/images/car.jpg"
-            value={30000}
-            motor={2.5}
-            brand="Marca"
-            model="Modelo"
-            variant="secondary"
-          />
-        </div>
-
-        <Button variant="filled" color="secondary">
-          Ver todos
-        </Button>
+        <FeaturedCarsList cars={carsForLocation} type="location" />
       </TabContent>
     </TabRoot>
   )
