@@ -1,18 +1,18 @@
 import { describe, expect, it, vi } from 'vitest'
 import { HttpProvider } from '../../src/providers/http-provider'
-import { GetAllCarsForSaleService } from '../../src/services/get-all-cars-for-sale'
+import { GetAllCarsForLocationService } from '../../src/services/get-all-cars-for-location'
 
-describe('GetAllCarsForSaleService', () => {
+describe('GetAllCarsForLocationService', () => {
   const httpProviderMock = {} as HttpProvider
 
   const httpProviderPostMock = vi.fn()
   httpProviderPostMock.mockResolvedValue({
     data: {
       data: {
-        allSales: [
+        allLocations: [
           {
             value: 30000,
-            sold: false,
+            located: false,
             vehicle: {
               brand: 'Volkswagen',
               model: 'Golf',
@@ -24,7 +24,7 @@ describe('GetAllCarsForSaleService', () => {
           },
           {
             value: 30000,
-            sold: false,
+            located: false,
             vehicle: {
               brand: 'Volkswagen',
               model: 'Fox',
@@ -40,13 +40,13 @@ describe('GetAllCarsForSaleService', () => {
   })
   httpProviderMock.post = httpProviderPostMock
 
-  const getAllCarsForSaleService = new GetAllCarsForSaleService(
+  const getAllCarsForLocationService = new GetAllCarsForLocationService(
     httpProviderMock,
   )
 
   describe('execute', () => {
     it('should return all cars', async () => {
-      const result = await getAllCarsForSaleService.execute()
+      const result = await getAllCarsForLocationService.execute()
 
       expect(result).toEqual([
         {
@@ -55,7 +55,7 @@ describe('GetAllCarsForSaleService', () => {
           year: 2013,
           slug: 'volkswagen-golf-2013',
           value: 30000,
-          sold: false,
+          located: false,
           motor: 1.6,
           fuel: 'Gasolina',
           transmission: 'Manual',
@@ -66,7 +66,7 @@ describe('GetAllCarsForSaleService', () => {
           model: 'Fox',
           year: 2013,
           slug: 'volkswagen-fox-2013',
-          sold: false,
+          located: false,
           value: 30000,
           motor: 1,
           fuel: 'Gasolina',
@@ -80,10 +80,10 @@ describe('GetAllCarsForSaleService', () => {
       httpProviderPostMock.mockResolvedValueOnce({
         data: {
           data: {
-            allSales: [
+            allLocations: [
               {
                 value: 30000,
-                sold: false,
+                located: false,
                 vehicle: {
                   brand: 'Volkswagen',
                   model: 'Golf',
@@ -99,7 +99,7 @@ describe('GetAllCarsForSaleService', () => {
       })
 
       await expect(() =>
-        getAllCarsForSaleService.execute(),
+        getAllCarsForLocationService.execute(),
       ).rejects.toThrowError('Invalid transmission! Value: null')
     })
 
@@ -107,10 +107,10 @@ describe('GetAllCarsForSaleService', () => {
       httpProviderPostMock.mockResolvedValueOnce({
         data: {
           data: {
-            allSales: [
+            allLocations: [
               {
                 value: 30000,
-                sold: false,
+                located: false,
                 vehicle: {
                   brand: 'Volkswagen',
                   model: 'Golf',
@@ -126,7 +126,7 @@ describe('GetAllCarsForSaleService', () => {
       })
 
       await expect(() =>
-        getAllCarsForSaleService.execute(),
+        getAllCarsForLocationService.execute(),
       ).rejects.toThrowError('Invalid fuel! Value: null')
     })
   })
