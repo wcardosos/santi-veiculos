@@ -17,11 +17,9 @@ export default function useHomePageCars() {
     )
 
     getAllCarsForSaleService.execute().then((data) => {
-      console.log(`cars for sale: ${JSON.stringify(data, null, 2)}`)
       setCarsForSale(data)
     })
     getAllCarsForLocationService.execute().then((data) => {
-      console.log(`cars for location: ${JSON.stringify(data, null, 2)}`)
       setCarsForLocation(data)
     })
   })
