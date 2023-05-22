@@ -44,7 +44,7 @@ export default function Home() {
         </article>
 
         <article className="absolute w-full">
-          <Header />
+          <Header variant="transparent" />
         </article>
       </section>
 
