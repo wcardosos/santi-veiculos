@@ -1,10 +1,14 @@
 import ContactButton from '@/components/ContactButton'
 import Header from '@/components/Header'
+import Head from 'next/head'
 import { Footer } from 'ui'
 
 export default function About() {
   return (
     <>
+      <Head>
+        <title>Santi Veículos - Sobre</title>
+      </Head>
       <Header />
       <main className="max-w-5xl mx-auto px-6">
         <div className="max-w-xl mx-auto my-12">
