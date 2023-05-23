@@ -1,7 +1,6 @@
 import ContactButton from '@/components/ContactButton'
 import Header from '@/components/Header'
 import Head from 'next/head'
-import { Footer } from 'ui'
 
 export default function About() {
   return (
@@ -11,7 +10,7 @@ export default function About() {
       </Head>
       <Header />
       <main className="max-w-5xl mx-auto px-6">
-        <div className="max-w-xl mx-auto my-12">
+        <div className="max-w-xl mx-auto my-24 mb-16">
           <img className="w-full" src="/assets/svg/logo.svg" alt="" />
         </div>
 
@@ -96,8 +95,6 @@ export default function About() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   )
 }
