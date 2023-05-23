@@ -20,7 +20,7 @@ export default function CarCard({
   return (
     <article className="bg-gray-100 shadow-md">
       <img
-        className="w-full h-48 object-cover rounded-t-lg"
+        className="w-72 lg:w-80 h-48 object-cover rounded-t-lg"
         src={imageUrl}
         alt="Car image"
       />
