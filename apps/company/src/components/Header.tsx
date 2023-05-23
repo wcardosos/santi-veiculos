@@ -12,7 +12,9 @@ export default function Header({ variant = 'primary' }: HeaderProps) {
 
   return (
     <header className="flex justify-between items-center py-4 text-primary px-6 max-w-5xl mx-auto">
-      <a href="/">Logo</a>
+      <a href="/">
+        <img className="h-8 lg:h-10" src="/assets/images/logo.png" alt="" />
+      </a>
 
       <nav className="hidden lg:flex gap-4 text-white">
         <a href="/#vehicles" className={navLinkClassname}>
