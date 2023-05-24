@@ -16,13 +16,12 @@ describe('CarInterestContactService', () => {
       const carInfoMock = {
         brand: 'Renault',
         model: 'Kwid',
-        year: 2017,
       }
 
       const result = carInterestContactService.execute(carInfoMock)
 
       expect(getLinkWithTextMock).toHaveBeenCalledWith(
-        'Me interessei pelo Renault Kwid 2017. Quero mais informações!',
+        'Me interessei pelo Renault Kwid. Quero mais informações!',
       )
       expect(result).toBe('car contact link')
     })
