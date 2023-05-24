@@ -34,6 +34,8 @@ export function Footer() {
             </div>
           </div>
 
+          <p className="my-4">CNPJ: 22.049.182/0001-28</p>
+
           <>
             <strong>Redes sociais</strong>
 
