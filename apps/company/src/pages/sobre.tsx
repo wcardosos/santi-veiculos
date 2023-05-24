@@ -91,7 +91,7 @@ export default function About() {
           </p>
 
           <div className="mt-6 lg:my-10">
-            <ContactButton />
+            <ContactButton to="https://wa.me/5511947226536?text=Quero%20comprar%20um%20carro!" />
           </div>
         </section>
       </main>

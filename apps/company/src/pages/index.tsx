@@ -201,7 +201,7 @@ export default function Home() {
             Se interessou por nossos serviços e quer saber mais ? Fale conosco
             pelo WhatsApp!
           </p>
-          <ContactButton />
+          <ContactButton to="https://wa.me/5511947226536?text=Quero%20comprar%20um%20carro!" />
         </section>
       </main>
     </>
