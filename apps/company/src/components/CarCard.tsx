@@ -1,4 +1,6 @@
-import Button from './Button'
+import { WhatsappLinkProvider } from '@/providers/whatsapp-link-provider'
+import { CarInterestContactService } from '@/services/car-interest-contact'
+import LinkButton from './LinkButton'
 
 interface CarCardProps {
   imageUrl: string
@@ -17,6 +19,19 @@ export default function CarCard({
   model,
   variant,
 }: CarCardProps) {
+  const carInterestData = {
+    brand,
+    model,
+  }
+
+  const whatsappLinkProvider = new WhatsappLinkProvider()
+  const carInterestContactService = new CarInterestContactService(
+    whatsappLinkProvider,
+  )
+
+  const carInterestContactLink =
+    carInterestContactService.execute(carInterestData)
+
   return (
     <article className="bg-gray-100 shadow-md">
       <img
@@ -40,9 +55,9 @@ export default function CarCard({
           <p>{`${brand} ${model}`}</p>
         </div>
         <div className="flex items-center">
-          <Button variant="filled" color={variant}>
+          <LinkButton to={carInterestContactLink} color={variant}>
             Mais detalhes
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </article>
