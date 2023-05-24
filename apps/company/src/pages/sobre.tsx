@@ -1,8 +1,11 @@
 import ContactButton from '@/components/ContactButton'
 import Header from '@/components/Header'
+import useDefaultContactButtonLink from '@/hooks/useDefaultContactButtonLink'
 import Head from 'next/head'
 
 export default function About() {
+  const { defaultContactLink } = useDefaultContactButtonLink()
+
   return (
     <>
       <Head>
@@ -91,7 +94,7 @@ export default function About() {
           </p>
 
           <div className="mt-6 lg:my-10">
-            <ContactButton to="https://wa.me/5511947226536?text=Quero%20comprar%20um%20carro!" />
+            <ContactButton to={defaultContactLink} />
           </div>
         </section>
       </main>

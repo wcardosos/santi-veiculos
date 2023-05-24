@@ -2,11 +2,14 @@ import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import DifferentialsList from '@/components/DifferentialsList'
 import Tabs from '@/components/Tabs'
+import useDefaultContactButtonLink from '@/hooks/useDefaultContactButtonLink'
 import { Separator } from '@radix-ui/react-separator'
 import Head from 'next/head'
 import { ArrowRight } from 'phosphor-react'
 
 export default function Home() {
+  const { defaultContactLink } = useDefaultContactButtonLink()
+
   return (
     <>
       <Head>
@@ -201,7 +204,7 @@ export default function Home() {
             Se interessou por nossos serviços e quer saber mais ? Fale conosco
             pelo WhatsApp!
           </p>
-          <ContactButton to="https://wa.me/5511947226536?text=Quero%20comprar%20um%20carro!" />
+          <ContactButton to={defaultContactLink} />
         </section>
       </main>
     </>
