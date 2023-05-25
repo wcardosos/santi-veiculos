@@ -17,18 +17,19 @@ export default function FeaturedCarsList({
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 mt-6 lg:mt-10 mb-12 justify-center">
-        {!hasCars && <p>Carregando...</p>}
-        {cars.map(({ brand, model, motor, slug, value, imageUrl }) => (
-          <CarCard
-            key={slug}
-            imageUrl={imageUrl}
-            brand={brand}
-            model={model}
-            motor={motor}
-            value={value}
-            variant={variantColor}
-          />
-        ))}
+        {!hasCars && <p>Sem carros disponíveis no momento</p>}
+        {hasCars &&
+          cars.map(({ brand, model, motor, slug, value, imageUrl }) => (
+            <CarCard
+              key={slug}
+              imageUrl={imageUrl}
+              brand={brand}
+              model={model}
+              motor={motor}
+              value={value}
+              variant={variantColor}
+            />
+          ))}
       </div>
       {hasCars && (
         <Button variant="filled" color={variantColor}>

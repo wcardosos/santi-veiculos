@@ -32,7 +32,7 @@ export default function Tabs() {
           value="sale"
           onClick={() => setSelectedTab('sale')}
         >
-          Venda
+          <span className="font-heading">Venda</span>
         </TabTrigger>
         <TabTrigger
           className={
@@ -41,7 +41,7 @@ export default function Tabs() {
           value="location"
           onClick={() => setSelectedTab('location')}
         >
-          Locação
+          <span className="font-heading">Locação</span>
         </TabTrigger>
       </TabList>
 

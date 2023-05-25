@@ -14,5 +14,9 @@ module.exports = {
       secondary: '#FAA557',
       ...colors,
     },
+    fontFamily: {
+      sans: ['Noto Sans'],
+      heading: ['Poppins'],
+    },
   },
 }

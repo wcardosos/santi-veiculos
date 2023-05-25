@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+import React from 'react'
 import {
   Copyright,
   EnvelopeSimple,
@@ -9,30 +11,33 @@ export function Footer() {
   return (
     <footer className="bg-primary text-gray-50 px-6 py-12">
       <div className="max-w-5xl mx-auto py-0 px-6">
-        <strong>Logo</strong>
+        <img
+          className="w-16"
+          src="https://www.datocms-assets.com/101238/1684886918-logo-secondary.png"
+          alt=""
+        />
 
         <div className="mt-6">
-          <strong>Nosso princípios</strong>
+          <strong className="font-heading">Nossos princípios</strong>
 
           <div className="py-4 flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <strong>Qualidade</strong>
-              <p>
-                Buscamos o melhor veículo para atender as necessidades do seu
-                dia-a-dia
-              </p>
+              <strong className="font-heading">Qualidade</strong>
+              <p>Veículos incríveis que fazem a diferença em cada trajeto!</p>
             </div>
             <div className="flex flex-col gap-2">
-              <strong>Procedência</strong>
+              <strong className="font-heading">Procedência</strong>
               <p>
-                Fornecemos a segurança necessária para você comprar seu novo
-                carro sem preocupações
+                Veículos com história transparente, para você acelerar sem
+                preocupações!
               </p>
             </div>
           </div>
 
+          <p className="my-4">CNPJ: 22.049.182/0001-28</p>
+
           <>
-            <strong>Redes sociais</strong>
+            <strong className="font-heading">Redes sociais</strong>
 
             <div className="flex gap-2 py-4">
               <EnvelopeSimple size={24} />

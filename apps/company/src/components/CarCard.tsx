@@ -1,4 +1,5 @@
-import Button from './Button'
+import LinkButton from './LinkButton'
+import useCarInterestContact from '@/hooks/useCarInterestContact'
 
 interface CarCardProps {
   imageUrl: string
@@ -17,10 +18,12 @@ export default function CarCard({
   model,
   variant,
 }: CarCardProps) {
+  const { carInterestContactLink } = useCarInterestContact(brand, model)
+
   return (
     <article className="bg-gray-100 shadow-md">
       <img
-        className="w-full h-48 object-cover rounded-t-lg"
+        className="w-72 lg:w-80 h-48 object-cover rounded-t-lg"
         src={imageUrl}
         alt="Car image"
       />
@@ -28,7 +31,7 @@ export default function CarCard({
       <div className="pt-4 lg:pt-6 pb-6 lg:pb-8 px-4 lg:px-6 text-start">
         <div className="flex justify-between items-center w-full">
           <strong
-            className={`font-bold text-${
+            className={`font-heading font-bold text-${
               variant === 'primary' ? 'primary' : 'orange-500'
             } text-lg`}
           >
@@ -40,9 +43,9 @@ export default function CarCard({
           <p>{`${brand} ${model}`}</p>
         </div>
         <div className="flex items-center">
-          <Button variant="filled" color={variant}>
+          <LinkButton to={carInterestContactLink} color={variant}>
             Mais detalhes
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </article>
