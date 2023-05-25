@@ -1,6 +1,6 @@
-import Button from '@/components/Button'
 import ContactButton from '@/components/ContactButton'
 import DifferentialsList from '@/components/DifferentialsList'
+import LinkButton from '@/components/LinkButton'
 import Tabs from '@/components/Tabs'
 import useDefaultContactButtonLink from '@/hooks/useDefaultContactButtonLink'
 import useServicesSection from '@/hooks/useServicesSection'
@@ -41,10 +41,12 @@ export default function Home() {
               </p>
 
               <div className="grid grid-rows-2 gap-4 mt-16">
-                <Button variant="filled" color="secondary">
+                <LinkButton to="#vehicles" color="secondary" openInThisTab>
                   Carros em destaque
-                </Button>
-                <Button variant="ghost">Serviços</Button>
+                </LinkButton>
+                <LinkButton to="#services" variant="ghost" openInThisTab>
+                  Serviços
+                </LinkButton>
               </div>
 
               <DifferentialsList />
