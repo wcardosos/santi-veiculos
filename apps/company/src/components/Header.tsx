@@ -8,7 +8,7 @@ export default function Header() {
           <img className="h-8 lg:h-10" src="/assets/images/logo.png" alt="" />
         </a>
 
-        <nav className="hidden lg:flex gap-4 text-white">
+        <nav className="hidden lg:flex gap-4 text-white font-heading">
           <a href="/#vehicles" className={navLinkClassname}>
             Veículos
           </a>
