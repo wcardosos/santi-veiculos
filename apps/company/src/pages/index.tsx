@@ -3,12 +3,14 @@ import ContactButton from '@/components/ContactButton'
 import DifferentialsList from '@/components/DifferentialsList'
 import Tabs from '@/components/Tabs'
 import useDefaultContactButtonLink from '@/hooks/useDefaultContactButtonLink'
+import useServicesSection from '@/hooks/useServicesSection'
 import { Separator } from '@radix-ui/react-separator'
 import Head from 'next/head'
 import { ArrowRight } from 'phosphor-react'
 
 export default function Home() {
   const { defaultContactLink } = useDefaultContactButtonLink()
+  const { salesContactLink, locationContactLink } = useServicesSection()
 
   return (
     <>
@@ -175,18 +177,22 @@ export default function Home() {
           <div className="w-full h-full absolute grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 text-gray-50">
             <div className="relative px-6">
               <div className="absolute bottom-0">
-                <div className="flex items-center mb-10">
-                  <p className="font-bold mr-4 text-xl">Quero comprar</p>
-                  <ArrowRight className="text-2xl" />
-                </div>
+                <a href={salesContactLink} target="_blank" rel="noreferrer">
+                  <div className="flex items-center mb-10">
+                    <p className="font-bold mr-4 text-xl">Quero comprar</p>
+                    <ArrowRight className="text-2xl" />
+                  </div>
+                </a>
               </div>
             </div>
             <div className="relative px-6">
               <div className="absolute bottom-0">
-                <div className="flex items-center mb-10">
-                  <p className="font-bold mr-4 text-xl">Quero locar</p>
-                  <ArrowRight className="text-2xl" />
-                </div>
+                <a href={locationContactLink} target="_blank" rel="noreferrer">
+                  <div className="flex items-center mb-10">
+                    <p className="font-bold mr-4 text-xl">Quero locar</p>
+                    <ArrowRight className="text-2xl" />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
