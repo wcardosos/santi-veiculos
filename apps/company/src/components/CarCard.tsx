@@ -43,7 +43,7 @@ export default function CarCard({
       <div className="pt-4 lg:pt-6 pb-6 lg:pb-8 px-4 lg:px-6 text-start">
         <div className="flex justify-between items-center w-full">
           <strong
-            className={`font-bold text-${
+            className={`font-heading font-bold text-${
               variant === 'primary' ? 'primary' : 'orange-500'
             } text-lg`}
           >

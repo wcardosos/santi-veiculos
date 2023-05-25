@@ -18,15 +18,15 @@ export function Footer() {
         />
 
         <div className="mt-6">
-          <strong>Nossos princípios</strong>
+          <strong className="font-heading">Nossos princípios</strong>
 
           <div className="py-4 flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <strong>Qualidade</strong>
+              <strong className="font-heading">Qualidade</strong>
               <p>Veículos incríveis que fazem a diferença em cada trajeto!</p>
             </div>
             <div className="flex flex-col gap-2">
-              <strong>Procedência</strong>
+              <strong className="font-heading">Procedência</strong>
               <p>
                 Veículos com história transparente, para você acelerar sem
                 preocupações!
@@ -37,7 +37,7 @@ export function Footer() {
           <p className="my-4">CNPJ: 22.049.182/0001-28</p>
 
           <>
-            <strong>Redes sociais</strong>
+            <strong className="font-heading">Redes sociais</strong>
 
             <div className="flex gap-2 py-4">
               <EnvelopeSimple size={24} />

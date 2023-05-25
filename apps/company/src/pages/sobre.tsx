@@ -18,10 +18,15 @@ export default function About() {
         </div>
 
         <section className="my-6 lg:my-10">
-          <h1 className="font-bold text-3xl text-primary mb-6">Quem somos</h1>
+          <h1 className="font-heading font-bold text-3xl text-primary mb-6">
+            Quem somos
+          </h1>
           <p>
-            Aqui na <strong className="text-primary">Santi Veículos</strong>,
-            estamos comprometidos em oferecer aos nossos clientes uma
+            Aqui na{' '}
+            <strong className="font-heading font-heading text-primary">
+              Santi Veículos
+            </strong>
+            , estamos comprometidos em oferecer aos nossos clientes uma
             experiência excepcional ao adquirir ou alugar um veículo. Nossa
             missão é fornecer veículos de qualidade e procedência, sempre
             priorizando a satisfação e as necessidades individuais de cada
@@ -37,7 +42,7 @@ export default function About() {
         </section>
 
         <section className="my-6 lg:my-10">
-          <h1 className="font-bold text-3xl text-primary mb-6">
+          <h1 className="font-heading font-bold text-3xl text-primary mb-6">
             Nosso trabalho
           </h1>
           <p>
@@ -63,7 +68,7 @@ export default function About() {
         </section>
 
         <section className="my-6 lg:my-10">
-          <h1 className="font-bold text-3xl text-primary mb-6">
+          <h1 className="font-heading font-bold text-3xl text-primary mb-6">
             Nossos objetivos
           </h1>
           <p>
@@ -75,10 +80,11 @@ export default function About() {
           </p>
           <br />
           <p>
-            <strong className="text-primary">Qualidade</strong> e{' '}
-            <strong className="text-primary">procedência</strong> são os pilares
-            que sustentam nossos serviços, e estamos empenhados em fazer com que
-            você sinta isso em cada interação com nossa empresa.
+            <strong className="font-heading text-primary">Qualidade</strong> e{' '}
+            <strong className="font-heading text-primary">procedência</strong>{' '}
+            são os pilares que sustentam nossos serviços, e estamos empenhados
+            em fazer com que você sinta isso em cada interação com nossa
+            empresa.
           </p>
         </section>
 
@@ -86,11 +92,14 @@ export default function About() {
           <p>
             Se você está em busca de um veículo confiável, uma equipe
             comprometida e um atendimento personalizado, a{' '}
-            <strong className="text-primary">Santi Veículos</strong> é a escolha
-            certa para você. Entre em contato conosco para obter mais
-            informações, agendar um test-drive ou discutir suas necessidades de
-            locação de veículos. Estamos ansiosos para ajudá-lo a encontrar o
-            veículo perfeito que atenda a todas as suas exigências.
+            <strong className="font-heading text-primary">
+              Santi Veículos
+            </strong>{' '}
+            é a escolha certa para você. Entre em contato conosco para obter
+            mais informações, agendar um test-drive ou discutir suas
+            necessidades de locação de veículos. Estamos ansiosos para ajudá-lo
+            a encontrar o veículo perfeito que atenda a todas as suas
+            exigências.
           </p>
 
           <div className="mt-6 lg:my-10">

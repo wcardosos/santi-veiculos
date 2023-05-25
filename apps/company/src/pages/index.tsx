@@ -30,7 +30,7 @@ export default function Home() {
 
           <article className="bg-gradient-to-t from-primary to-primary/0 w-full h-full absolute text-gray-50 py-24">
             <div className="max-w-5xl mx-auto px-6">
-              <h1 className="font-bold text-3xl lg:text-5xl">
+              <h1 className="font-heading font-heading font-bold text-3xl lg:text-5xl">
                 Encontre o carro dos{' '}
                 <span className="text-orange-400">seus sonhos</span>
               </h1>
@@ -56,7 +56,7 @@ export default function Home() {
           id="vehicles"
           className="my-12 lg:my-16 text-center mx-auto px-6"
         >
-          <h1 className="font-bold text-primary text-xl lg:text-2xl">
+          <h1 className="font-heading font-bold text-primary text-xl lg:text-2xl">
             Veículos em destaque
           </h1>
 
@@ -79,7 +79,7 @@ export default function Home() {
 
           <article className="absolute w-full h-full bg-gray-900/50 text-right text-gray-50 px-6 py-10 lg:py-24">
             <div className="lg:max-w-3xl mx-auto">
-              <h1 className="font-bold text-2xl lg:text-4xl">
+              <h1 className="font-heading font-bold text-2xl lg:text-4xl">
                 Aproveite nossos diferenciais
               </h1>
               <DifferentialsList position="right" />
@@ -88,7 +88,7 @@ export default function Home() {
         </section>
 
         <section id="why-choose-us" className="max-w-5xl mx-auto py-0 px-6">
-          <h1 className="text-2xl font-bold text-primary">
+          <h1 className="font-heading text-2xl font-bold text-primary">
             Por que escolher a Santi Veículos?
           </h1>
           <article className="grid grid-rows-2 mt-6 lg:mt-12 gap-4 lg:gap-12">
@@ -124,8 +124,10 @@ export default function Home() {
                 </h2>
                 <p>
                   A nossa parceria com a{' '}
-                  <strong className="text-primary">MdBroker Seguros</strong> te
-                  deixa preparado para futuras surpresas desagradáveis.
+                  <strong className="font-heading text-primary">
+                    MdBroker Seguros
+                  </strong>{' '}
+                  te deixa preparado para futuras surpresas desagradáveis.
                 </p>
               </div>
             </div>
@@ -137,7 +139,8 @@ export default function Home() {
                 </h2>
                 <p>
                   Encontre a melhor taxa para você a partir da nossa parceria
-                  com a <strong className="text-primary">Dryve</strong>
+                  com a{' '}
+                  <strong className="font-heading text-primary">Dryve</strong>
                 </p>
               </div>
               <div className="text-center">
@@ -199,13 +202,15 @@ export default function Home() {
         </section>
 
         <section className="text-center text-primary px-6">
-          <h1 className="font-bold text-xl">
+          <h1 className="font-heading font-bold text-xl">
             VEÍCULOS COM PREÇOS ACESSÍVEIS E A QUALIDADE QUE VOCÊ PROCURA
           </h1>
         </section>
 
         <section id="contact" className="my-12 max-w-5xl mx-auto py-0 px-6">
-          <h1 className="text-primary font-bold text-xl">Contato</h1>
+          <h1 className="font-heading text-primary font-bold text-xl">
+            Contato
+          </h1>
           <p className="mt-4 mb-6">
             Se interessou por nossos serviços e quer saber mais ? Fale conosco
             pelo WhatsApp!
