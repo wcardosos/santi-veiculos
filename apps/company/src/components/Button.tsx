@@ -38,7 +38,7 @@ export default function Button({ variant, color, children }: ButtonProps) {
 
   return (
     <button
-      className={`w-48 lg:w-64 h-12 lg:h-14 rounded font-bold mx-auto ${styles.join(
+      className={`w-48 lg:w-64 h-12 lg:h-14 font-heading rounded font-bold mx-auto ${styles.join(
         ' ',
       )}`}
     >
