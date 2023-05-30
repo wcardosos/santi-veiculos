@@ -2,6 +2,8 @@ import ContactButton from '@/components/ContactButton'
 import Header from '@/components/Header'
 import useDefaultContactButtonLink from '@/hooks/useDefaultContactButtonLink'
 import Head from 'next/head'
+import Image from 'next/image'
+import logoImage from '../../public/assets/images/logo.webp'
 
 export default function About() {
   const { defaultContactLink } = useDefaultContactButtonLink()
@@ -14,7 +16,7 @@ export default function About() {
       <Header />
       <main className="max-w-5xl mx-auto px-6">
         <div className="max-w-xl mx-auto my-24 mb-16">
-          <img className="w-full" src="/assets/svg/logo.svg" alt="" />
+          <Image src={logoImage} alt="" />
         </div>
 
         <section className="my-6 lg:my-10">
