@@ -31,11 +31,11 @@ export default function FeaturedCarsList({
             />
           ))}
       </div>
-      {hasCars && (
+      {/* {hasCars && (
         <Button variant="filled" color={variantColor}>
           Ver todos
         </Button>
-      )}
+      )} */}
     </>
   )
 }
