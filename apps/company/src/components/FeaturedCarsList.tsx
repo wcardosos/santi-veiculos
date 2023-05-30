@@ -1,6 +1,5 @@
 import { Car } from '@/entities/car'
 import CarCard from './CarCard'
-import Button from './Button'
 
 interface FeaturedCarsListProps {
   cars: Car[]
@@ -31,11 +30,6 @@ export default function FeaturedCarsList({
             />
           ))}
       </div>
-      {hasCars && (
-        <Button variant="filled" color={variantColor}>
-          Ver todos
-        </Button>
-      )}
     </>
   )
 }
