@@ -1,0 +1,17 @@
+[
+  {
+    "description": "Carros disponíveis para venda",
+    "domain": "OLX",
+    "url": "https://olx.com.br"
+  },
+  {
+    "description": "Carros disponíveis para locação",
+    "domain": "OLX",
+    "url": "https://olx.com.br"
+  },
+  {
+    "description": "Informações sobre a empresa",
+    "domain": "Site oficial",
+    "url": "https://santiveiculos.com.br"
+  }
+]
